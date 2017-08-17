@@ -27,7 +27,7 @@ func VersionShouldBeGreaterThan(actual interface{}, expected ...interface{}) str
 	return fmt.Sprintf("%v is not greater than %v", actualVersion, expectedVersions[0])
 }
 
-func VersionShouldBeLessThan(actual interface{}, expected ...interface{}) string {
+func VersionShouldBeLowerThan(actual interface{}, expected ...interface{}) string {
 	actualVersion, expectedVersions, err := convertToVersion(actual, expected...)
 	if err != nil {
 		return err.Error()

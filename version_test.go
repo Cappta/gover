@@ -84,31 +84,31 @@ func TestVersion(t *testing.T) {
 		Convey("Given a Version strucutre with a higher Major", func() {
 			higherMajor := NewVersion(major+1, minor, build, revision)
 			Convey("Then base should be lower", func() {
-				So(testBase, VersionShouldBeLessThan, higherMajor)
+				So(testBase, VersionShouldBeLowerThan, higherMajor)
 			})
 		})
 		Convey("Given a Version strucutre with a higher Minor", func() {
 			higherMinor := NewVersion(major, minor+1, build, revision)
 			Convey("Then base should be lower", func() {
-				So(testBase, VersionShouldBeLessThan, higherMinor)
+				So(testBase, VersionShouldBeLowerThan, higherMinor)
 			})
 		})
 		Convey("Given a Version strucutre with a higher Build", func() {
 			higherBuild := NewVersion(major, minor, build+1, revision)
 			Convey("Then base should be lower", func() {
-				So(testBase, VersionShouldBeLessThan, higherBuild)
+				So(testBase, VersionShouldBeLowerThan, higherBuild)
 			})
 		})
 		Convey("Given a Version strucutre with a higher Revision", func() {
 			higherRevision := NewVersion(major, minor, build, revision+1)
 			Convey("Then base should be lower", func() {
-				So(testBase, VersionShouldBeLessThan, higherRevision)
+				So(testBase, VersionShouldBeLowerThan, higherRevision)
 			})
 		})
 		Convey("Given a Version strucutre with a 5th positive version value", func() {
 			fiveValuesVersion := NewVersion(major, minor, build, revision, 1)
 			Convey("Then base should be lower", func() {
-				So(testBase, VersionShouldBeLessThan, fiveValuesVersion)
+				So(testBase, VersionShouldBeLowerThan, fiveValuesVersion)
 			})
 		})
 
