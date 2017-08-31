@@ -1,6 +1,6 @@
 package gover
 
-import "github.com/Cappta/Cappta.Common.Go/Math"
+import "github.com/Cappta/gohelpmath"
 
 const (
 	// Lower means the Left Version is lower than the one in the Right
@@ -15,7 +15,7 @@ const (
 func (version *Version) Compare(targetVersion *Version) int {
 	versionLength := len(version.Values)
 	targetVersionLength := len(targetVersion.Values)
-	highestLength := Math.IntMax(versionLength, targetVersionLength)
+	highestLength := gohelpmath.IntMax(versionLength, targetVersionLength)
 
 	for index := 0; index < highestLength; index++ {
 		versionValue := version.GetValueFromIndex(index)
